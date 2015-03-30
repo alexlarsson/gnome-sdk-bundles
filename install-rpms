@@ -2,6 +2,8 @@
 
 BUILDDIR=$1
 shift
+SDK=$1
+shift
 RUNTIME=$1
 shift
 VERSION=$1
@@ -12,7 +14,7 @@ BUILDDIR=$(readlink -f $BUILDDIR)
 BUNDLESDIR=$(readlink -f $(dirname $0))
 
 rm -rf ${BUILDDIR}
-xdg-app build-init ${BUILDDIR} -v org.gnome.Sdk.Var org.gnome.Sdk ${RUNTIME} ${VERSION}
+xdg-app build-init ${BUILDDIR} -v ${SDK}.Var ${SDK} ${RUNTIME} ${VERSION}
 
 FILES=
 for i in $RPMS; do
