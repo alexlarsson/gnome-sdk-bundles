@@ -1,0 +1,35 @@
+#!/bin/sh
+
+BUILDDIR=$1
+shift
+RUNTIME=$1
+shift
+VERSION=$1
+shift
+RPMS="$@"
+
+BUILDDIR=$(readlink -f $BUILDDIR)
+BUNDLESDIR=$(readlink -f $(dirname $0))
+
+rm -rf ${BUILDDIR}
+xdg-app build-init ${BUILDDIR} -v org.gnome.Sdk.Var org.gnome.Sdk ${RUNTIME} ${VERSION}
+
+FILES=
+for i in $RPMS; do
+    FILES="$FILES $i.rpm"
+done
+
+cd $BUNDLESDIR
+
+make deps SDK_VERSION=${VERSION}
+rc=$?; if [ $rc != 0 ] ; then exit $rc; fi
+
+make $FILES SDK_VERSION=${VERSION}
+rc=$?; if [ $rc != 0 ] ; then exit $rc; fi
+
+FILES=
+for i in $RPMS; do
+    FILES="$FILES $i.rpm $(./requires.sh $i)"
+done
+
+xdg-app build ${BUILDDIR} rpm -Uvh $FILES

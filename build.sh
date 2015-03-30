@@ -17,7 +17,7 @@ trap finish EXIT
 xdg-app build-init ${BUILDDIR} -v ${SDK}.Var ${SDK} ${SDK} ${VERSION}
 
 for BR in `xdg-app build ${BUILDDIR} rpmspec -q ${SPEC} --buildrequires`; do
-    xdg-app build ${BUILDDIR} rpm -Uvh ${BR}.rpm
+    xdg-app build ${BUILDDIR} rpm -Uvh $(./requires.sh ${BR}) ${BR}.rpm
 done
 
 xdg-app build ${BUILDDIR} rpmspec -q ${SPEC} --qf "rm -f %{NAME}.rpm\n" | sh

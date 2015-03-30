@@ -16,7 +16,7 @@ to GTK+ and glib-based applications.
 %package dev
 Summary:	Development files for libpeas
 Group:		Development/Libraries
-Requires:	%{name}%{?_isa} = %{version}-%{release}
+Requires:	%{name} = %{version}-%{release}
 
 %description dev
 This package contains development libraries and header files

@@ -11,6 +11,7 @@ URL: http://live.gnome.org/devhelp
 #VCS: git:git://git.gnome.org/devhelp
 Source: http://download.gnome.org/sources/devhelp/%{release_version}/devhelp-%{version}.tar.xz
 
+Requires: %{name}-libs = %{epoch}:%{version}-%{release}
 Requires(post):   /usr/bin/gtk-update-icon-cache
 Requires(postun): /usr/bin/gtk-update-icon-cache
 
@@ -30,7 +31,7 @@ into other applications such as IDEs.
 %package dev
 Summary: Library to embed Devhelp in other applications
 Group: Development/Libraries
-Requires: %{name}-libs%{?_isa} = %{epoch}:%{version}-%{release}
+Requires: %{name}-libs = %{epoch}:%{version}-%{release}
 
 %description dev
 Devhelp is an API documentation browser for the GNOME desktop.

@@ -6,18 +6,19 @@ License:        GPLv2 with exceptions
 URL:            http://libgit2.github.com/
 Source0:        https://github.com/libgit2/libgit2/archive/v%{version}.tar.gz?/%{name}-%{version}.tar.gz
 
-BuildRequires:  http-parser
 BuildRequires:  http-parser-dev
 
+Requires: http-parser
+
 %description
-libgit2 is a portable, pure C implementation of the Git core methods 
+libgit2 is a portable, pure C implementation of the Git core methods
 provided as a re-entrant linkable library with a solid API, allowing
 you to write native speed custom Git applications in any language
 with bindings.
 
 %package        dev
 Summary:        Development files for %{name}
-Requires:       %{name}%{?_isa} = %{version}-%{release}
+Requires:       %{name} = %{version}-%{release}
 
 %description    dev
 This package contains libraries and header files for

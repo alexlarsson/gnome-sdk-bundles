@@ -9,16 +9,16 @@ License:        LGPLv2+
 URL:            https://wiki.gnome.org/Projects/Libgit2-glib
 Source0:        http://download.gnome.org/sources/libgit2-glib/%{release_version}/libgit2-glib-%{version}.tar.xz
 
-BuildRequires:  http-parser
-BuildRequires:  libgit2
 BuildRequires:  libgit2-dev
+Requires:       libgit2
 
 %description
 libgit2-glib is a glib wrapper library around the libgit2 git access library.
 
 %package        dev
 Summary:        Development files for %{name}
-Requires:       %{name}%{?_isa} = %{version}-%{release}
+Requires:       %{name} = %{version}-%{release}
+Requires:       libgit2-dev
 
 %description    dev
 The %{name}-devel package contains libraries and header files for

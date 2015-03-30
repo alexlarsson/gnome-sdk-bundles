@@ -23,7 +23,7 @@ This package contains version 3 of GtkSourceView. The older version
 %package dev
 Summary: Files to compile applications that use gtksourceview3
 Group: Development/Libraries
-Requires: %{name}%{?_isa} = %{version}-%{release}
+Requires: %{name} = %{version}-%{release}
 
 %description dev
 gtksourceview3-devel contains the files required to compile
@@ -32,7 +32,7 @@ applications which use GtkSourceView 3.
 %package tests
 Summary: Tests for the gtksourceview3 package
 Group: Development/Libraries
-Requires: %{name}%{?_isa} = %{version}-%{release}
+Requires: %{name} = %{version}-%{release}
 
 %description tests
 The gtksourceview3-tests package contains tests that can be used to verify

@@ -1,2 +1,4 @@
 RPMS
+SOURCES
 rpm-dependencies.P
+*.rpm
