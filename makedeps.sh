@@ -36,7 +36,7 @@ for SPEC in SPECS/*.spec; do
         echo -n "$FILENAME "
     done
     echo
-    echo '	./build.sh ${SDK} ${SDK_VERSION} ${SPEC}'
+    echo '	./build.sh ${SDK} ${SDK_VERSION}' ${SPEC}
     echo
 
 
