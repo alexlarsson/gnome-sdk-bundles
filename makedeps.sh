@@ -1,7 +1,7 @@
 #!/bin/sh
 
-SDK=$1
-VERSION=$2
+SDK=org.freedesktop.Sdk
+VERSION=1.0
 
 mkdir -p build
 BUILDDIR=`mktemp -d build/XXXXXX`
@@ -36,7 +36,7 @@ for SPEC in SPECS/*.spec; do
         echo -n "$FILENAME "
     done
     echo
-    echo "	./build.sh ${SDK} ${VERSION} ${SPEC}"
+    echo '	./build.sh ${SDK} ${SDK_VERSION} ${SPEC}'
     echo
 
 

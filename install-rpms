@@ -23,10 +23,10 @@ done
 
 cd $BUNDLESDIR
 
-make deps SDK_VERSION=${VERSION}
+make deps
 rc=$?; if [ $rc != 0 ] ; then exit $rc; fi
 
-make $FILES SDK_VERSION=${VERSION}
+make $FILES SDK=${SDK} SDK_VERSION=${VERSION}
 rc=$?; if [ $rc != 0 ] ; then exit $rc; fi
 
 FILES=
