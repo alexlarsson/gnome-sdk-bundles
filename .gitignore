@@ -1,4 +1,5 @@
 RPMS
-SOURCES
+SOURCES/*.tar*
+SOURCES/*.tgz
 rpm-dependencies.P
 *.rpm

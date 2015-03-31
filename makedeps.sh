@@ -3,6 +3,7 @@
 SDK=$1
 VERSION=$2
 
+mkdir -p build
 BUILDDIR=`mktemp -d build/XXXXXX`
 xdg-app build-init ${BUILDDIR} -v ${SDK}.Var ${SDK} ${SDK} ${VERSION}
 
@@ -11,6 +12,10 @@ function finish {
 }
 trap finish EXIT
 
+echo "SOURCES:"
+echo "	mkdir SOURCES"
+echo
+
 export LC_ALL=C
 for SPEC in SPECS/*.spec; do
     URLS=`xdg-app build ${BUILDDIR} rpmspec -P ${SPEC} | grep "^Source.*:" | awk '{ print $2 }' /dev/stdin | grep 'http\|ftp'`
@@ -18,7 +23,7 @@ for SPEC in SPECS/*.spec; do
     for URL in $URLS; do
         FILENAME=SOURCES/`basename $URL`
         BARE_URL=`echo $URL | sed s/\?.*//`
-        echo "$FILENAME:"
+        echo "$FILENAME: SOURCES"
         echo "	wget -O $FILENAME $BARE_URL"
         echo
     done
