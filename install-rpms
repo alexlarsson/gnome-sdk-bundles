@@ -2,6 +2,8 @@
 
 BUILDDIR=$1
 shift
+APP=$1
+shift
 SDK=$1
 shift
 RUNTIME=$1
@@ -14,7 +16,7 @@ BUILDDIR=$(readlink -f $BUILDDIR)
 BUNDLESDIR=$(readlink -f $(dirname $0))
 
 rm -rf ${BUILDDIR}
-xdg-app build-init ${BUILDDIR} -v ${SDK}.Var ${SDK} ${RUNTIME} ${VERSION}
+xdg-app build-init ${BUILDDIR} -v ${SDK}.Var ${APP} ${SDK} ${RUNTIME} ${VERSION}
 
 FILES=
 for i in $RPMS; do

@@ -10,7 +10,7 @@ VERSION=1.0
 
 mkdir -p build
 BUILDDIR=`mktemp -d build/XXXXXX`
-xdg-app build-init ${BUILDDIR} -v ${SDK}.Var ${SDK} ${SDK} ${VERSION}
+xdg-app build-init ${BUILDDIR} -v ${SDK}.Var org.gnome.TempBuild ${SDK} ${SDK} ${VERSION}
 
 function finish {
     rm -rf ${BUILDDIR}
