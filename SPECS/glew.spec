@@ -59,7 +59,7 @@ libGLEWmx
 #cp /usr/lib/rpm/redhat/config.guess config/
 
 %build
-make %{?_smp_mflags} CFLAGS.EXTRA="$RPM_OPT_FLAGS -fPIC -L/self/lib" LDFLAGS.EXTRA="-L/self/lib" includedir=%{_includedir} STRIP= libdir=%{_libdir} bindir=%{_bindir} GLEW_DEST=
+make %{?_smp_mflags} CFLAGS.EXTRA="$RPM_OPT_FLAGS -fPIC -L/app/lib" LDFLAGS.EXTRA="-L/app/lib" includedir=%{_includedir} STRIP= libdir=%{_libdir} bindir=%{_bindir} GLEW_DEST=
 
 %install
 make install.all GLEW_DEST= DESTDIR="$RPM_BUILD_ROOT" libdir=%{_libdir} bindir=%{_bindir} includedir=%{_includedir}
