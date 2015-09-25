@@ -6,9 +6,9 @@ License:        GPLv2 with exceptions
 URL:            http://libgit2.github.com/
 Source0:        https://github.com/libgit2/libgit2/archive/v%{version}.tar.gz?/%{name}-%{version}.tar.gz
 
-BuildRequires:  http-parser-dev
+BuildRequires:  http-parser-dev libssh2-dev
 
-Requires: http-parser
+Requires: http-parser libssh2
 
 %description
 libgit2 is a portable, pure C implementation of the Git core methods
@@ -19,6 +19,7 @@ with bindings.
 %package        dev
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
+Requires:       libssh2-dev
 
 %description    dev
 This package contains libraries and header files for
