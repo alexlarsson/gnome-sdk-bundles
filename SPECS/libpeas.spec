@@ -1,7 +1,7 @@
 %global release_version %%(echo %{version} | awk -F. '{print $1"."$2}')
 
 Name:		libpeas
-Version:	1.14.0
+Version:	1.16.0
 Release:	1%{?dist}
 Summary:	Plug-ins implementation convenience library
 
