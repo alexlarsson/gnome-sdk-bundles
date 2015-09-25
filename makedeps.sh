@@ -1,7 +1,7 @@
 #!/bin/sh
 
 SDK=org.freedesktop.Sdk
-VERSION=1.0
+VERSION=1.2
 
 mkdir -p build
 BUILDDIR=`mktemp -d build/XXXXXX`

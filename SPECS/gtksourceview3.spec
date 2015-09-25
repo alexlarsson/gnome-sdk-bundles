@@ -4,7 +4,7 @@
 
 Summary: A library for viewing source files
 Name: gtksourceview3
-Version: 3.16.0
+Version: 3.18.0
 Release: 1%{?dist}
 License: LGPLv2+
 Group: System Environment/Libraries

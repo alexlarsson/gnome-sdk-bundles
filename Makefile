@@ -1,5 +1,5 @@
 SDK=org.gnome.Sdk
-SDK_VERSION=3.16
+SDK_VERSION=3.18
 
 all:
 	true
