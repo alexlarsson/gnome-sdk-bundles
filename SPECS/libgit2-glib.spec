@@ -1,7 +1,7 @@
 %global release_version %%(echo %{version} | awk -F. '{print $1"."$2}')
 
 Name:           libgit2-glib
-Version:        0.0.24
+Version:        0.23.6
 Release:        1%{?dist}
 Summary:        Git library for GLib
 
